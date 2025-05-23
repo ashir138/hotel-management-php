@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #0e1b3d;
+    --accent-color: #3620cb;
+    --gradient: linear-gradient(90deg, #70b7e6bc, #0000ffaa);
+    --bg-text-shadow: 0 2px 4px rgba(13, 0, 77, 0.08), 0 3px 6px rgba(13, 0, 77, 0.08), 0 8px 16px rgba(13, 0, 77, 0.08);
+    --box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f7fa;
+}
+
+/* Top Navbar */
+.uppernav {
+    height: 50px;
+    background-image: var(--gradient);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: var(--box-shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.logo p {
+    font-size: 24px;
+    font-weight: 600;
+    color: #08112c;
+    text-shadow: var(--bg-text-shadow);
+}
+
+/* Logout Button */
+.logout button {
+    height: 32px;
+    width: 100px;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout button:hover {
+    background-color: #c2185b;
+}
+
+/* Sidebar */
+.sidenav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18%;
+    height: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding-top: 50px;
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.sidenav ul {
+    list-style: none;
+}
+
+.sidenav ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidenav ul li:hover,
+.sidenav ul li.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidenav ul li img {
+    height: 22px;
+}
+
+/* Main Screen */
+.mainscreen {
+    margin-left: 18%;
+    height: 100vh;
+    width: 82%;
+    background-color: #fff;
+}
+
+.frames {
+    height: 100%;
+    width: 100%;
+    display: none;
+    border: none;
+}
+
+.frames.active {
+    display: block;
+}
+
+/* Mobile View Lock */
+#mobileview {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    color: #111;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    #mobileview {
+        display: flex;
+    }
+
+    .uppernav,
+    .sidenav,
+    .mainscreen {
+        display: none;
+    }
+}

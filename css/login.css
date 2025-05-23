@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Cookie&family=Poppins:wght@600&display=swap');
+
+/* ========== ROOT VARIABLES ========== */
+:root {
+  --bg-text-shadow: 0 2px 4px rgba(13, 0, 77, 0.08), 0 3px 6px rgba(13, 0, 77, 0.08), 0 8px 16px rgba(13, 0, 77, 0.08);
+  --bg-box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.34);
+  --primary-gradient: linear-gradient(90deg, rgba(76, 185, 236, 0.5), rgba(0, 30, 255, 0.5));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ========== CAROUSEL SIDE ========== */
+section {
+  width: 50%;
+  height: 100%;
+}
+.carousel_section {
+  box-shadow: var(--bg-box-shadow);
+}
+.carousel-image {
+  height: 100vh;
+  object-fit: cover;
+}
+.carousel-inner::after {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
+/* ========== LOGO ========== */
+.logo {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.logo .bluebirdlogo {
+  height: 100%;
+}
+.logo p {
+  font-size: 30px;
+  color: rgb(66, 68, 74);
+  display: flex;
+  align-items: center;
+  text-shadow: var(--bg-text-shadow);
+}
+
+/* ========== AUTH CONTAINER ========== */
+.auth_container {
+  height: 80%;
+  margin: 50px;
+}
+#Log_in,
+#sign_up {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== ROLE SWITCH BUTTONS ========== */
+.role_btn {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.role_btn .btns {
+  width: 200px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgba(93, 102, 116, 0.3);
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+.role_btn .btns:hover,
+.role_btn .btns.active {
+  background-image: var(--primary-gradient);
+  color: white;
+}
+
+/* ========== LOGIN/REGISTER FORMS ========== */
+.authsection,
+.user_signup {
+  width: 70%;
+  text-align: center;
+  display: none;
+  animation: screen_animation 0.4s;
+}
+.user_login.active,
+.employee_login.active,
+.user_signup.active {
+  display: block;
+}
+
+.form-floating {
+  margin: 15px 0;
+}
+
+/* ========== AUTH BUTTON ========== */
+.auth_btn {
+  padding: 15px 30px;
+  font-size: 17px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(118, 141, 176, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: color 250ms;
+  z-index: 1;
+}
+.auth_btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 0;
+  height: 100%;
+  background-image: var(--primary-gradient);
+  z-index: -1;
+  transition: width 250ms;
+}
+.auth_btn:hover {
+  color: #fff;
+}
+.auth_btn:hover::before {
+  width: 100%;
+}
+
+/* ========== FOOTER ELEMENTS ========== */
+.footer_line {
+  margin: 20px 0;
+}
+.page_move_btn {
+  color: rgba(0, 0, 255, 0.6);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.page_move_btn:hover {
+  color: blue;
+}
+
+/* ========== ANIMATION ========== */
+@keyframes screen_animation {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 480px) {
+  .carousel_section {
+    display: none;
+  }
+  .auth_container {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+  }
+  .role_btn .btns {
+    width: 90px;
+    font-size: 14px;
+  }
+  .authsection,
+  .user_signup {
+    width: 100%;
+  }
+}

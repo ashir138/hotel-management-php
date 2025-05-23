@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Cookie&family=Poppins:wght@600&display=swap');
+
+/* ========== ROOT & GLOBAL ========== */
+:root {
+  --bg-text-shadow: 0 2px 4px rgba(13, 0, 77, 0.08), 0 3px 6px rgba(13, 0, 77, 0.08), 0 8px 16px rgba(13, 0, 77, 0.08);
+  --bg-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.4rem;
+}
+*::-webkit-scrollbar-track {
+  background: #06062c;
+}
+*::-webkit-scrollbar-thumb {
+  background: #0040ff;
+}
+
+/* ========== NAVIGATION BAR ========== */
+nav {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+nav ul {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+}
+ul li a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s ease;
+}
+ul li:hover a {
+  color: black;
+}
+ul li:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 90%;
+}
+.logo .hotellogo {
+  height: 100%;
+}
+.logo p {
+  font-size: 30px;
+  color: rgb(66, 68, 74);
+  text-shadow: var(--bg-text-shadow);
+}
+
+/* ========== FIRST SECTION (Hero Carousel) ========== */
+#firstsection {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(175, 175, 222, 0.5);
+}
+
+.carousel-inner {
+  height: 100vh;
+}
+.carousel-inner::after {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(178, 170, 236, 0.5);
+}
+.carousel-item img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.welcomeline {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.welcometag {
+    font-size: 100px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 3px;
+
+    background: linear-gradient(135deg, #ff0084, #3300ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* For good measure */
+
+    display: inline-block;
+    user-select: none;
+    text-shadow: none; /* Avoid background block effects */
+  }
+  
+  .welcometag:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 6px 8px rgba(0, 0, 0, 0.35);
+  }
+  
+
+/* ========== SECOND SECTION (Rooms) ========== */
+#secondsection {
+  height: 100vh;
+  position: relative;
+}
+#secondsection img {
+  width: 100%;
+  height: 100vh;
+  filter: blur(20px);
+  position: absolute;
+  z-index: -2;
+}
+
+.ourroom {
+  position: relative;
+  top: 90px;
+  height: 400px;
+  width: 100%;
+}
+.head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.roomselect {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.roombox {
+  width: 300px;
+  background-color: #080830;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hotelphoto {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+.h1 { background-image: url(../image/hotel1photo.webp); }
+.h2 { background-image: url(../image/hotel2photo.jpg); }
+.h3 { background-image: url(../image/hotel3photo.avif); }
+.h4 { background-image: url(../image/hotel4photo.jpg); }
+
+.roomdata {
+  text-align: center;
+}
+.roomdata h2 {
+  color: #d1d5ff;
+  font-size: 26px;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+.services i {
+  color: white;
+  margin: 7px;
+}
+
+.bookbtn {
+  margin: 10px;
+}
+
+/* ========== GUEST DETAIL PANEL ========== */
+#guestdetailpanel {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+}
+
+.logoutbtn {
+  width: 200px;
+  background-color: #d81313cc;
+}
+
+/* ========== THIRD SECTION (Facilities) ========== */
+#thirdsection {
+  height: 80vh;
+}
+
+.facility {
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.facility .box {
+  width: 310px;
+  background-color: #0040ff;
+  border: 2px solid white;
+  background-size: cover;
+  background-position: center;
+}
+.facility .box h2 {
+  text-align: center;
+  position: relative;
+  top: 80%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.box:nth-child(1) { background-image: url(../image/swimingpool.jpg); }
+.box:nth-child(2) { background-image: url(../image/spa.jpg); }
+.box:nth-child(3) { background-image: url(../image/food.jpg); }
+.box:nth-child(4) { background-image: url(../image/gym.jpg); }
+.box:nth-child(5) { background-image: url(../image/heli.jpg); }
+
+/* ========== FOOTER ========== */
+#contactus {
+  height: 70px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+#contactus .social {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#contactus i {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+#contactus .createdby {
+  color: white;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    padding: 10px 20px;
+    background-color: #96a8f88c;
+  }
+  nav ul {
+    display: none;
+  }
+
+  #firstsection,
+  .carousel-inner,
+  .carousel-item img,
+  .welcomeline {
+    height: 50vh;
+  }
+  .welcometag {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  #secondsection {
+    height: auto;
+  }
+
+  .roomselect {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .roombox {
+    width: 80%;
+  }
+
+  #thirdsection {
+    height: auto;
+  }
+
+  .facility {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .facility .box {
+    width: 45%;
+    height: 200px;
+  }
+
+  .facility .box h2 {
+    font-size: 16px;
+  }
+
+  .box:nth-child(5) {
+    display: none;
+  }
+
+  #contactus {
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

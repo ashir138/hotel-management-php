@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400&display=swap');
+
+:root {
+    --bg-text-shadow: 0 2px 4px rgba(13, 0, 77, 0.08), 0 3px 6px rgba(13, 0, 77, 0.08), 0 8px 16px rgba(13, 0, 77, 0.08);
+    --scroll-thumb: #0040ff;
+    --scroll-track: rgb(6, 6, 44);
+    --main-bg: #ccdff4;
+    --panel-bg: rgba(155, 187, 255, 0.75);
+    --primary-dark: #0a0d2d;
+    --light-input: #d1d7ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 0.4rem;
+}
+*::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+*::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+}
+
+body {
+    background-color: #fff;
+    color: var(--primary-dark);
+}
+
+i {
+    font-size: 20px;
+}
+
+/* Top Bar (Search + Buttons) */
+.searchsection {
+    height: 80px;
+    width: 100%;
+    background-color: var(--primary-dark);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    z-index: 500;
+}
+
+#search_bar {
+    height: 40px;
+    width: 80%;
+    background-color: rgba(195, 198, 233, 0.714);
+    border: none;
+    padding-left: 20px;
+    border-radius: 30px;
+}
+
+#adduser {
+    height: 40px;
+    padding: 0 50px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(0, 59, 254);
+    color: white;
+    cursor: pointer;
+}
+#adduser:hover {
+    background-color: rgba(0, 17, 255, 0.733);
+}
+
+.exportexcel {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(47, 255, 47);
+    cursor: pointer;
+}
+
+/* Guest Panel Overlay */
+#guestdetailpanel {
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.48);
+    display: none;
+    justify-content: center;
+}
+
+.guestdetailpanelform {
+    width: 1170px;
+    height: 620px;
+    margin-top: 20px;
+    background-color: var(--main-bg);
+    border-radius: 10px;
+    animation: guestinfoform 0.3s ease;
+}
+
+/* Panel Animation */
+@keyframes guestinfoform {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Guest Panel Sections */
+.guestdetailpanelform .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.guestdetailpanelform .head h3 {
+    color: #111f49;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guestdetailpanelform .head i {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.guestdetailpanelform .middle {
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+.guestinfo,
+.reservationinfo {
+    flex: 1;
+    background-color: var(--panel-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    width: 10px;
+    height: 100%;
+    background-color: transparent;
+}
+
+.middle input,
+.selectinput {
+    width: 100%;
+    background-color: var(--light-input);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+}
+
+.datesection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.datesection span {
+    flex: 1;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Room Book Table Styling */
+.roombooktable {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    padding: 20px;
+    padding-bottom: 200px;
+    overflow-x: auto;
+}
+
+.roombooktable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.roombooktable thead {
+    background-color: var(--primary-dark);
+    color: white;
+    text-align: center;
+}
+
+.roombooktable tbody {
+    text-align: center;
+    background-color: #f5f7ff;
+}
+
+.roombooktable th,
+.roombooktable td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.action a {
+    text-decoration: none;
+}
+
+.action button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.action .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}

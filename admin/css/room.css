@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400&display=swap');
+
+:root {
+    --text-dark: #0a0d2d;
+    --text-shadow: 0 2px 4px rgba(13, 0, 77, 0.08), 0 3px 6px rgba(13, 0, 77, 0.08), 0 8px 16px rgba(13, 0, 77, 0.08);
+    --scroll-thumb: #0040ff;
+    --scroll-track: rgb(6, 6, 44);
+    --section-bg: #0a0d2d;
+    --input-width: 300px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+}
+
+body {
+    background-color: #f7faff;
+}
+
+/* Add Room Form Bar */
+.addroomsection {
+    height: 60px;
+    width: 100%;
+    background-color: var(--section-bg);
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.addroomsection form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.addroomsection label {
+    color: white;
+    font-size: 15px;
+}
+
+.addroomsection input,
+.addroomsection select {
+    width: var(--input-width);
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* Room Container */
+.room {
+    position: relative;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Room Box Styling */
+.roombox {
+    height: 230px;
+    width: 230px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: var(--text-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-dark);
+    transition: transform 0.2s ease;
+}
+
+.roombox:hover {
+    transform: scale(1.03);
+}
+
+/* Room Type Colors */
+.roomboxsuperior {
+    background-color: #2407fc8e;
+}
+
+.roomboxdelux {
+    background-color: #fa8393c8;
+}
+
+.roomboguest {
+    background-color: #19cf1069;
+}
+
+.roomboxsingle {
+    background-color: #07fcdb8e;
+}

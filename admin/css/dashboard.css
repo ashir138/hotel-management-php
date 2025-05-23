@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400&display=swap');
+
+:root {
+    --primary-bg: #ccdff4;
+    --text-dark: rgb(20, 20, 83);
+    --border-color-1: red;
+    --border-color-2: rgba(0, 255, 68, 0.814);
+    --border-color-3: rgb(51, 0, 255);
+    --scroll-thumb: #0040ff;
+    --scroll-track: rgb(6, 6, 44);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+}
+
+body {
+    background-color: #f6faff;
+}
+
+/* Dashboard Cards */
+.databox {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0;
+}
+
+.databox .box {
+    flex: 1;
+    max-width: 380px;
+    height: 200px;
+    background-color: var(--primary-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.databox .box:hover {
+    transform: translateY(-4px);
+}
+
+.databox .box h1 {
+    font-size: 72px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: var(--text-dark);
+}
+
+.databox .box h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+/* Colored Bottom Borders */
+.box:nth-child(1) {
+    border-bottom: 8px solid var(--border-color-1);
+}
+
+.box:nth-child(2) {
+    border-bottom: 8px solid var(--border-color-2);
+}
+
+.box:nth-child(3) {
+    border-bottom: 8px solid var(--border-color-3);
+}
+
+/* Chart Section */
+.chartbox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.bookroomchart,
+.profitchart1 {
+    background-color: var(--primary-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Doughnut Chart */
+.bookroomchart {
+    width: 350px;
+    padding: 20px 40px;
+}
+
+/* Bar Chart */
+.profitchart1 {
+    width: 660px;
+    min-height: 400px;
+}
+
+/* Centered Titles */
+.chartbox h3 {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
