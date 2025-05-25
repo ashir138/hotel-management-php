@@ -7,7 +7,7 @@ A complete Hotel Management Web Application built using PHP, MySQL, HTML, CSS, J
 ## 🎥 Project Demo
 
 > 📺 Watch the visual walkthrough of the system on my linkedin:  
-> **[Ali Ashir]()**  
+> **[Ali Ashir](https://www.linkedin.com/posts/ali-ashir-3bb590257_php-mysql-webdevelopment-activity-7332254092972462080-bG8p?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD9Ehz8B3F06Xk6O3RVLyYiiMwgY_wGWhSo)**  
 
 ---
 
